@@ -1,3 +1,4 @@
+# Bài 2 
 <!DOCTYPE html>
 <html>
   <head>
@@ -30,3 +31,36 @@ nếu chúng ta nhập vào password thay vì giá trị string mà là array :
 it will gives a warning (‘WARNING strcmp() expects parameter 2 to be string, array given on line number …!’
  but the compare result return 0.
  sử dụng burpsuite để bắt gói tin thay giá trị password=xxx thành password[]=xxx thì sẽ hiện ra flag = FLAG_VQcTWEK7zZYzvLhX 
+# Bài 4
+if ($_POST['id']!=='' or $_POST['password']!=='')
+{
+    $try = true;
+    $db = new PDO('sqlite:database.db');
+    $s = $db->prepare('SELECT * FROM user WHERE id=? AND password=?');
+    $s->execute(array($_POST['id'], $_POST['password']));
+    $ok = $s->fetch() !== false;
+}
+Thông qua source code , ta có thể thấy có site database.db
+Truy cập http://ksnctf.sweetduet.info/problem/35/database.db và ta down được file database về
+Sử dụng tool https://inloop.github.io/sqlite-viewer/ ta có thể lấy ra được câu lệnh sql và các bảng
+SELECT * FROM 'user2' LIMIT 0,30
+
+id	password
+root	GLDmNFJimveAAxyg_wSNp
+tuy nhiên ta thay ngược lại thì vẫn không login vào được 
+thử đổi user2 sang user 
+và ta sẽ nhận đc flag 
+id	password
+root	FLAG_iySDmApNegJvwmxN
+# Bài 3 
+Bài này sử dụng hàm random để lấy ra shipname
+Nếu lấy ra được yamato thì sẽ được flag 
+tuy nhiên
+hàm này chỉ cho random để lấy ra đến giá trị thứ 10 trong dãy
+        $ship[] = mt_rand(0, count($shipname)-2);
+tức là ko thể lấy ra được giá trị yamato
+ta sử dụng burpsuite để bắt gói tin random 
+và nhận ra rằng mỗi lần send request to server thì giá trị trả về bao gồm ship=x và signature=xxx
+trong đó signature sử dụng hàm hash để mã hóa 
+ta sử dụng tool hashbump để lấy ra được giá trị signature mới 
+forward giá trị signature mới và ta thu được flag :FLAG_uc8qVFa8Sr6DwYVP
