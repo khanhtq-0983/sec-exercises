@@ -1,4 +1,5 @@
-# Bài 2 
+## Bài 2
+``` html
 <!DOCTYPE html>
 <html>
   <head>
@@ -21,16 +22,13 @@ if (isset($_POST['password']))
     </form>
   </body>
 </html>
+``` html
 
-bài náy sử dụng code php
-trong đó, ta nhận ra password nhập vào và password được so sánh với nhau bằng hàm string case compare
-hàm này so sánh từng giá trị trong chuỗi và so sánh độ dài với nhau 
-nếu trả về 0 thì sẽ in ra flag
-để làm được bài này,ta sử dụng string case compare vulnerabilities 
-nếu chúng ta nhập vào password thay vì giá trị string mà là array :
-it will gives a warning (‘WARNING strcmp() expects parameter 2 to be string, array given on line number …!’
+-Bài náy sử dụng code php trong đó, ta nhận ra password nhập vào và password được so sánh với nhau bằng hàm string case compare hàm này so sánh từng giá trị trong chuỗi và so sánh độ dài với nhau nếu trả về 0 thì sẽ in ra flag
+để làm được bài này,ta sử dụng string case compare vulnerabilities nếu chúng ta nhập vào password thay vì giá trị string mà là array :
+  - it will gives a warning (‘WARNING strcmp() expects parameter 2 to be string, array given on line number …!’
  but the compare result return 0.
- sử dụng burpsuite để bắt gói tin thay giá trị password=xxx thành password[]=xxx thì sẽ hiện ra flag = FLAG_VQcTWEK7zZYzvLhX 
+  - Sử dụng burpsuite để bắt gói tin thay giá trị password=xxx thành password[]=xxx thì sẽ hiện ra flag = FLAG_VQcTWEK7zZYzvLhX 
 # Bài 4
 if ($_POST['id']!=='' or $_POST['password']!=='')
 {
