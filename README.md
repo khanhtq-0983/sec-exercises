@@ -16,12 +16,12 @@
 
 - [x] [0x00 - Tutorial](0x00)
   - [X] Ex 1
-- [ ] [0x01 - Encoding](0x01)
+- [X] [0x01 - Encoding](0x01)
   - [X] Ex 1
   - [X] Ex 2
   - [X] Ex 3
-  - [ ] Ex 4
-  - [ ] Ex 5
+  - [X] Ex 4
+  - [X] Ex 5
 - [x] [0x02 - PHP](0x02)
   - [x] Ex 1
   - [x] Ex 2
