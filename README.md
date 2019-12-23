@@ -40,8 +40,8 @@
 - [ ] [0x06 - One-Time Pad + RNG](0x06)
   - [ ] Ex 1
   - [ ] Ex 2
-- [x] [0x07 - Javascript](0x07)
-  - [ ] Ex 1
+- [ ] [0x07 - Javascript](0x07)
+  - [x] Ex 1
   - [ ] Ex 2
   - [ ] Ex 3
 - [ ] [0x08 - Networking](0x08)
