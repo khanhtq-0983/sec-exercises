@@ -23,7 +23,7 @@
   - [X] Ex 4
   - [X] Ex 5
 - [x] [0x02 - PHP](0x02)
-  - [x] Ex 1
+  - [ ] Ex 1
   - [x] Ex 2
   - [x] Ex 3
   - [x] Ex 4
